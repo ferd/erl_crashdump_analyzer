@@ -57,5 +57,9 @@ echo -e "\nNumber of processes:\n==="
 grep '=proc:' $DUMP | wc -l
 
 ### PROC HEAPS+STACK
-echo -e "\nProcesses Heap+Stack memory sizes used in the VM (5 largest different):\n==="
-grep 'Stack+heap' $DUMP | sed "s/Stack+heap: //g" | sort -n -r | uniq -c | head -n5
+echo -e "\nProcesses Heap+Stack memory sizes (words) used in the VM (5 largest different):\n==="
+grep 'Stack+heap' $DUMP | sed "s/Stack+heap: //g" | sort -n -r | uniq -c | head -5
+
+### PROC OLDHEAP
+echo -e "\nProcesses OldHeap memory sizes (words) used in the VM (5 largest different):\n==="
+grep 'OldHeap' $DUMP | sed "s/OldHeap: //g" | sort -n -r | uniq -c | head -5
