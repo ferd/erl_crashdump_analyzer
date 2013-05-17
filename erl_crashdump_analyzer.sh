@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 DUMP=$1
 
 echo -e "analyzing $DUMP, generated on: " `head -2 $DUMP | tail -1` "\n"
